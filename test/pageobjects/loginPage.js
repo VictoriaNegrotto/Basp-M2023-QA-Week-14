@@ -17,16 +17,27 @@ class loginPage {
     }
 
     get errorImage () {
-        return $('#item_4_img_link > img')
+        return $('#item_4_img_link > img');
     }
 
+    get footerContain (){
+        return $('#page_wrapper > footer');
+    }
+
+    get footerFbButton(){
+        return $('#page_wrapper > footer > ul > li.social_facebook > a')
+    }
     async loginform (username, password) {
         await this.userNameInput.setValue(username);
         await this.passwordInput.setValue(password);
     }
 
     async loginButtonClick() {
-        await this.loginButton.click ()
+        await this.loginButton.click ();
+    }
+
+    async footerFbButtonClick() {
+        await this.loginButton.click();
     }
 }
 

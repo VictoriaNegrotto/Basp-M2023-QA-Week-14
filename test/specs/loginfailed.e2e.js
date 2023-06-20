@@ -1,4 +1,4 @@
-    import loginPage from "../pageobjects/loginpage.js";
+import loginPage from "../pageobjects/loginpage.js";
 
 describe ('go to login user', () =>{
     beforeAll('open browser',()=>{
@@ -12,7 +12,6 @@ describe ('go to login user', () =>{
         await loginPage.loginform("standard_user", "secret_sauc");
         await expect (loginPage.errorAlert).toBeDisplayed();
         await loginPage.loginButtonClick();
-
         expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')
     });
 
@@ -21,7 +20,6 @@ describe ('go to login user', () =>{
         await expect (loginPage.userNameInput).toBeDisplayed();
         await loginPage.loginform("locked_out_user", "secret_sauce");
         await loginPage.loginButtonClick();
-
         await expect (loginPage.errorAlert).toBeDisplayed();
     });
 
@@ -41,7 +39,6 @@ describe ('go to login user', () =>{
         await expect (loginPage.userNameInput).toBeDisplayed();
         await loginPage.loginform("performance_glitch_user", "secret_sauce");
         await loginPage.loginButtonClick();
-
         browser.newWindow('https://www.saucedemo.com/inventory.html');
     });
 });

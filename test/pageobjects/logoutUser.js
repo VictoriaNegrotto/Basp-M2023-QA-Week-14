@@ -1,6 +1,5 @@
 class logoutUser {
 
-
     get buttonBurguer (){
         return $('#react-burger-menu-btn');
     }
@@ -17,4 +16,4 @@ class logoutUser {
         await this.buttonBurguer.click ();
     }
 }
-export default new logoutUser();
+    export default new logoutUser();

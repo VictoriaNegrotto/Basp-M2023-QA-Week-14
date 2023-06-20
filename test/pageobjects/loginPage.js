@@ -37,7 +37,7 @@ class loginPage {
     }
 
     async footerFbButtonClick() {
-        await this.loginButton.click();
+        await this.footerFbButton.click();
     }
 }
 

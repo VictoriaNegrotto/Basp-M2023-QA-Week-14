@@ -18,7 +18,7 @@ class userHomePage {
     }
 
     get containerInventory(){
-        return $('#inventory_container')
+        return $('#inventory_container');
     }
 
     get productImage (){
@@ -26,7 +26,7 @@ class userHomePage {
     }
 
     get productImageInventory (){
-    return $('#inventory_item_container > div > div > div.inventory_details_img_container > img')
+        return $('#inventory_item_container > div > div > div.inventory_details_img_container > img');
     }
 
     get backProductsButton (){
@@ -42,7 +42,7 @@ class userHomePage {
     }
 
     get sortButton2 (){
-        return $('#header_container > div.header_secondary_container > div > span > select > option:nth-child(2)')
+        return $('#header_container > div.header_secondary_container > div > span > select > option:nth-child(2)');
     }
 
     get addToCartButton (){
@@ -54,7 +54,7 @@ class userHomePage {
     }
 
     get conteinDescription (){
-        return $('#cart_contents_container > div > div.cart_list > div.cart_item')
+        return $('#cart_contents_container > div > div.cart_list > div.cart_item');
     }
 
     get checkoutButton (){
@@ -94,13 +94,12 @@ class userHomePage {
     }
 
     get finishtext (){
-        return $('#checkout_complete_container > h2')
+        return $('#checkout_complete_container > h2');
     }
 
     get backButton (){
         return $('#back-to-products');
     }
-
 
     async checkoutForm (firstname, lastname, postalcode) {
         await this.inputFirstName.setValue(firstname);
@@ -120,6 +119,10 @@ class userHomePage {
     }
     async removeButtonClick(){
         await this.removeButton.click();
+    }
+
+    async buttonBurguerClick() {
+        await this.buttonBurguer.click ();
     }
 
     async backProductsButtonClick (){
@@ -150,6 +153,5 @@ class userHomePage {
         await this.backButton.click ();
     }
 }
-
 
 export default new userHomePage();

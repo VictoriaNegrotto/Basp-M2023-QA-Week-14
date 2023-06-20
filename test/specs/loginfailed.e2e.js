@@ -28,19 +28,19 @@ describe ('go to login user', () =>{
         await expect (loginPage.userNameInput).toBeDisplayed();
         await loginPage.loginform("problem_user", "secret_sauce");
         await loginPage.loginButtonClick();
-        browser.newWindow('https://www.saucedemo.com/inventory.html');
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
         await expect (loginPage.errorImage).toBeDisplayed();
         await logoutUser.buttonBurguerClick();
         await logoutUser.logOutButtonClick();
-        expect(browser).toHaveUrl('https://www.saucedemo.com/')
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/')
     });
 
-    /*it ('verify login performance process', async() =>{
+    it ('verify login performance process', async() =>{
         await expect (loginPage.loginButton).toBeDisplayed();
         await expect (loginPage.userNameInput).toBeDisplayed();
         await loginPage.loginform("performance_glitch_user", "secret_sauce");
         await loginPage.loginButtonClick();
         browser.pause(2000)
-        //browser.newWindow('https://www.saucedemo.com/inventory.html');
-    });*/
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+    });
 });

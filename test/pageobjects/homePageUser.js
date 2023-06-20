@@ -13,7 +13,7 @@ class userHomePage {
         return $('#react-burger-menu-btn');
     }
 
-    get addToCart (){
+    get addToCartButtonShopping (){
         return $('#shopping_cart_container > a');
     }
 
@@ -23,6 +23,10 @@ class userHomePage {
 
     get productImage (){
         return $('#item_4_img_link > img');
+    }
+
+    get productImageInventory (){
+    return $('#inventory_item_container > div > div > div.inventory_details_img_container > img')
     }
 
     get backProductsButton (){
@@ -104,10 +108,16 @@ class userHomePage {
         await this.inputpostalCode.setValue(postalcode);
     }
 
+    async productImageClick(){
+        await this.productImage.click();
+    }
     async addButtonClick() {
         await this.addToCartButton.click ();
     }
 
+    async addToCartButtonShoppingClick (){
+        await this.addToCartButtonShopping .click();
+    }
     async removeButtonClick(){
         await this.removeButton.click();
     }
@@ -118,6 +128,10 @@ class userHomePage {
 
     async sortButtonClick() {
         await this.sortButton.click ();
+    }
+
+    async sortButton2Click(){
+        await this.sortButton2.click();
     }
 
     async checkoutButtonClick() {

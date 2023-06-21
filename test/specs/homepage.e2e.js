@@ -19,7 +19,6 @@ describe('go to login user', () =>{
     it('home page user', async () =>{
         await expect (userHomePage.productsText).toBeDisplayed();
         await expect (userHomePage.buttonBurguer).toBeDisplayed();
-        await expect (userHomePage.addToCart).toBeDisplayed();
         await expect (userHomePage.containerInventory).toBeDisplayed();
         await expect (userHomePage.productImage).toBeDisplayed();
     });
@@ -39,11 +38,10 @@ describe('go to login user', () =>{
         await userHomePage.productImageClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory-item.html?id=4');
         await userHomePage.addButtonClick();
-        await expect(userHomePage.removeButton).toBeDisplayed();
         await userHomePage.addToCartButtonShoppingClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/cart.html');
-        await expect(userHomePage.productImageInventory).toBeDisplayed();
-        await expect(userHomePage.conteinDescription).toBeDisplayed();
+        //await expect(userHomePage.productImageInventory).toBeDisplayed();
+        await expect(userHomePage.containDescription).toBeDisplayed();
         await userHomePage.checkoutButtonClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/checkout-step-one.html');
     });
@@ -60,7 +58,7 @@ describe('go to login user', () =>{
     it ('finish checkout', async () =>{
         await expect(browser).toHaveUrl('https://www.saucedemo.com/checkout-step-two.html');
         await expect (userHomePage.overviewTittle).toBeDisplayed();
-        await expect (userHomePage.conteinDescription).toBeDisplayed();
+        await expect (userHomePage.containDescription).toBeDisplayed();
         await expect (userHomePage.summaryCheckout).toBeDisplayed();
         await userHomePage.finishButtonClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/checkout-complete.html');

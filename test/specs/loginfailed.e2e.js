@@ -40,7 +40,7 @@ describe ('go to login user', () =>{
         await expect (loginPage.userNameInput).toBeDisplayed();
         await loginPage.loginform("performance_glitch_user", "secret_sauce");
         await loginPage.loginButtonClick();
-        browser.pause(2000)
+        browser.pause(2000);
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
     });
 });

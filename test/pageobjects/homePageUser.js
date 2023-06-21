@@ -26,7 +26,7 @@ class userHomePage {
     }
 
     get productImageInventory (){
-        return $('#inventory_item_container > div > div > div.inventory_details_img_container > img');
+        return $('#inventory_container');
     }
 
     get backProductsButton (){
@@ -53,8 +53,8 @@ class userHomePage {
         return $('#remove-sauce-labs-backpack');
     }
 
-    get conteinDescription (){
-        return $('#cart_contents_container > div > div.cart_list > div.cart_item');
+    get containDescription (){
+        return $('#item_4_title_link');
     }
 
     get checkoutButton (){
@@ -111,18 +111,18 @@ class userHomePage {
         await this.productImage.click();
     }
     async addButtonClick() {
-        await this.addToCartButton.click ();
+        await this.addToCartButton.click();
     }
 
     async addToCartButtonShoppingClick (){
-        await this.addToCartButtonShopping .click();
+        await this.addToCartButtonShopping.click();
     }
     async removeButtonClick(){
         await this.removeButton.click();
     }
 
     async buttonBurguerClick() {
-        await this.buttonBurguer.click ();
+        await this.buttonBurguer.click();
     }
 
     async backProductsButtonClick (){
@@ -130,7 +130,7 @@ class userHomePage {
     }
 
     async sortButtonClick() {
-        await this.sortButton.click ();
+        await this.sortButton.click();
     }
 
     async sortButton2Click(){
@@ -138,19 +138,19 @@ class userHomePage {
     }
 
     async checkoutButtonClick() {
-        await this.checkoutButton.click ();
+        await this.checkoutButton.click();
     }
 
     async continueButtonClick() {
-        await this.continueButton.click ();
+        await this.continueButton.click();
     }
 
     async finishButtonClick() {
-        await this.finishButton.click ();
+        await this.finishButton.click();
     }
 
     async backButtonClick() {
-        await this.backButton.click ();
+        await this.backButton.click();
     }
 }
 

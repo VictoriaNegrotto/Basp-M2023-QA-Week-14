@@ -3,11 +3,12 @@
 ## About the project
 I worked with the `Web Driver Io` for automatin test on the project `Sauce Demo` along with `Jasmin`.
 
-Started with `Login Page` for different user on the failed path and happy path for login and home page.
+In `page objects` I put all the elements to be used in the e2e, then in `test` the flows made by the user.
 
-Then I worked with `Home Page User` where I make a happy path about `Login, Home Page and Shopping`
+## Scope
+`Login Page` for different user on the failed path and happy path for login.
 
-And finally I worked on `Logout` and finished the path of the user on `Sauce Demo`
+`Home Page` where I make a happy path about `Login, Home Page and Shopping, Logout` and finished the path of the user on `Sauce Demo`.
 
 ## Objetive
 The idea is to cover the `happy path` on the purchase of a product from the moment of Login until ending in Logout.

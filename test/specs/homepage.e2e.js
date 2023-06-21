@@ -22,6 +22,9 @@ describe('go to login user', () =>{
         await expect (userHomePage.addToCart).toBeDisplayed();
         await expect (userHomePage.containerInventory).toBeDisplayed();
         await expect (userHomePage.productImage).toBeDisplayed();
+    });
+
+    it ('navigate in home page', async () => {
         await userHomePage.productImageClick();
         await userHomePage.addButtonClick();
         await userHomePage.removeButtonClick();
@@ -52,6 +55,9 @@ describe('go to login user', () =>{
         await expect (userHomePage.inputpostalCode).toBeDisplayed();
         await userHomePage.checkoutForm("Victoria", "Ramirez", "2000");
         await userHomePage.continueButtonClick();
+    });
+
+    it ('finish checkout', async () =>{
         await expect(browser).toHaveUrl('https://www.saucedemo.com/checkout-step-two.html');
         await expect (userHomePage.overviewTittle).toBeDisplayed();
         await expect (userHomePage.conteinDescription).toBeDisplayed();

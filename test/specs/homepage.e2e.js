@@ -40,7 +40,6 @@ describe('go to login user', () =>{
         await userHomePage.addButtonClick();
         await userHomePage.addToCartButtonShoppingClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/cart.html');
-        //await expect(userHomePage.productImageInventory).toBeDisplayed();
         await expect(userHomePage.containDescription).toBeDisplayed();
         await userHomePage.checkoutButtonClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/checkout-step-one.html');

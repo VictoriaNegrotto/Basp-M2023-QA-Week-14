@@ -9,8 +9,8 @@ describe ('go to login user', () =>{
     });
 
     it ('succes process', async() =>{
-        await expect (loginPage.loginButton).toBeDisplayed();
         await expect (loginPage.userNameInput).toBeDisplayed();
+        await expect (loginPage.passwordInput).toBeDisplayed();
         await loginPage.loginform("standard_user", "secret_sauce");
         await loginPage.loginButtonClick();
     });
@@ -19,7 +19,7 @@ describe ('go to login user', () =>{
         await expect (userHomePage.productsText).toBeDisplayed();
         await expect (userHomePage.buttonBurguer).toBeDisplayed();
         await logoutUser.buttonBurguerClick();
-        await expect (userHomePage.addToCart).toBeDisplayed();
+        await userHomePage.addButtonClick();
         await expect (userHomePage.containerInventory).toBeDisplayed();
     });
 

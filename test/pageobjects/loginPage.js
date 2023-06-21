@@ -16,6 +16,10 @@ class loginPage {
         return $('#login_button_container > div > form > div.error-message-container.error > h3')
     }
 
+    get alertBlockButton () {
+        return $('#login_button_container > div > form > div.error-message-container.error > h3 > button')
+    }
+
     get errorImage () {
         return $('#item_4_img_link > img');
     }
@@ -38,6 +42,10 @@ class loginPage {
 
     async footerFbButtonClick() {
         await this.footerFbButton.click();
+    }
+
+    async alertBlockClick(){
+        await this.alertBlockButton.click();
     }
 }
 

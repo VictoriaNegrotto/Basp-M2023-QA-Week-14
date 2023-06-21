@@ -1,5 +1,7 @@
+import userHomePage from "../pageobjects/homePageUser.js";
 import loginPage from "../pageobjects/loginpage.js";
 import logoutUser from "../pageobjects/logoutUser.js";
+
 
 describe ('go to login user', () =>{
     beforeAll('open browser',()=>{
@@ -7,20 +9,20 @@ describe ('go to login user', () =>{
         browser.url("https://www.saucedemo.com/");
     });
 
-    it ('verify login process', async() =>{
-        await expect (loginPage.loginButton).toBeDisplayed();
+    it ('wrong password of login process', async() =>{
         await expect (loginPage.userNameInput).toBeDisplayed();
+        await expect (loginPage.passwordInput).toBeDisplayed();
         await loginPage.loginform("standard_user", "secret_sauc");
         await expect (loginPage.errorAlert).toBeDisplayed();
         await loginPage.loginButtonClick();
     });
 
     it ('verify login process block', async() =>{
-        await expect (loginPage.loginButton).toBeDisplayed();
+        await loginPage.loginButtonClick();
         await expect (loginPage.userNameInput).toBeDisplayed();
         await loginPage.loginform("locked_out_user", "secret_sauce");
         await loginPage.loginButtonClick();
-        await expect (loginPage.errorAlert).toBeDisplayed();
+        await loginPage.alertBlockClick();
     });
 
     it ('verify login problem process', async() =>{
@@ -42,5 +44,14 @@ describe ('go to login user', () =>{
         await loginPage.loginButtonClick();
         browser.pause(2000);
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+    });
+
+        it ('logout finish flow', async() =>{
+        await userHomePage.productImageClick();
+        await userHomePage.addButtonClick();
+        await userHomePage.removeButtonClick();
+        await logoutUser.buttonBurguerClick();
+        await logoutUser.logOutButtonClick();
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/');
     });
 });
